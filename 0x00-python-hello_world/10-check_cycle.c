@@ -2,25 +2,21 @@
 #include "lists.h"
 /**
  * check_cycle - check if list is empty
- * @list: create pointer to head
- * traverse through linked list
- * Return: if NULL is found return 0
- * if pointer to head == head pointer
- * return 1
+ * @list: creates pointer to head
+ * Return: 1 on success and 0 on failure.
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *temp = list;
+	listint_t *steady = list, *quick = list;
 
-	if (temp == NULL)
+	if (list == NULL)
 		return (0);
-	while (temp)
+	while (steady && quick && quick->next)
 	{
-		if (temp->next == NULL)
-			return (0);
-		temp = temp->next;
-		if (temp == list)
-			break;
+		steady = steady->next;
+		quick = quick->next->next;
+		if (steady == quick)
+			return (1);
 	}
-	return (1);
+	return (0);
 }
