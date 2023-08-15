@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 def new_in_list(my_list, idx, element):
-    new_list = []
     if int(idx) < 0:
         return my_list
     if int(idx) > (len(my_list) - 1):
