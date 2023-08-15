@@ -2,7 +2,7 @@
 def print_matrix_integer(matrix=[[]]):
     def print_list(list = []):
         for i in range(len(list)):
-            if i < (len(list)-1):
+            if i < (len(list) - 1):
                 print("{:d}".format(list[i]), end=' ')
             else:
                 print("{:d}".format(list[i]))
