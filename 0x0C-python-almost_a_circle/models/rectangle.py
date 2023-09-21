@@ -3,6 +3,8 @@
 Task 2: First Rectangle
 Task 3: Validate attributes
 Task 4: Area first
+Task 5: Display #0
+Task 6: __str__
 '''
 from models.base import Base
 
@@ -140,3 +142,11 @@ class Rectangle(Base):
         '''
         for _ in range(self.height):
             print("#" * self.width)
+
+    def __str__(self):
+        '''
+        string repr. of Rectangle
+
+        Returns: formatted string
+        '''
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
