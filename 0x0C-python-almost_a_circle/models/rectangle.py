@@ -5,6 +5,10 @@ Task 3: Validate attributes
 Task 4: Area first
 Task 5: Display #0
 Task 6: __str__
+Task 7: Display #1
+Task 8: Update #0
+Task 9: Update #1
+Task 13: Rectangle instance to dict. repr.
 '''
 from models.base import Base
 
@@ -138,10 +142,12 @@ class Rectangle(Base):
 
     def display(self):
         '''
-        prints rectangle values
+        prints Rectangle to stdout using # character
         '''
-        for _ in range(self.height):
-            print("#" * self.width)
+        for row in range(self.y):
+            print()
+        for row in range(self.__height):
+            print('{}{}'.format(' ' * self.x, '#' * self.width))
 
     def __str__(self):
         '''
@@ -164,3 +170,10 @@ class Rectangle(Base):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        '''
+        returns dictionary repr. of class Rectangle
+        '''
+        return{'id':self.id, 'width':self.width,
+                'height':self.height, 'x':self.x, 'y':self.y}
