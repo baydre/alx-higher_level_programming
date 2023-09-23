@@ -40,3 +40,18 @@ class Base:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        '''
+        writes JSON string representation of list_objs to a file
+        '''
+        filename = cls.__name__ + ".json"
+        obj_list = []
+
+        if list_objs is not None:
+            for obj in list_objs:
+                obj_list.append(obj.to_dictionary())
+
+        with open(filename, mode="w", encoding="utf-8") as file:
+            file.write(cls.to_json_string(obj_list))
