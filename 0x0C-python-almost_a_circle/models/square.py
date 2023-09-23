@@ -2,6 +2,8 @@
 '''
 Task 10: And now, the Square!
 Task 11: Square size
+Task 12: Square update
+Task 14:
 '''
 from models.rectangle import Rectangle
 
@@ -45,3 +47,23 @@ class Square(Rectangle):
             raise ValueError("width must be a positive integer")
         self.width = value
         self.height = value
+
+    def update(self, *args, **kwargs):
+        '''
+        class Square updates
+        '''
+        if args:
+            keys = ['id', 'size', 'x', 'y']
+            for key, value in zip(keys, args):
+                setattr(self, key, value)
+            return
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+            return
+
+    def to_dictionary(self):
+        '''
+        returns dict repr. of class Square
+        '''
+        return {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
