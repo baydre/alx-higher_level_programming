@@ -2,6 +2,9 @@
 '''
 Task 1: Base module
 Task 15: Dictionary to JSON string
+Task 16: JSON string to file
+Task 17: JSON string to dictionary
+Task 18: Dictionary to instance
 '''
 import json
 
@@ -58,3 +61,15 @@ class Base:
         returns the list of dictionaries from JSON string repr.
         '''
         return json.loads(json_string or '[]')
+
+    @classmethod
+    def create(cls, **dictionary):
+        '''
+        returns instance with all attributes
+        '''
+        if cls.__name__ == 'Rectangle':
+            anon = cls(1, 1)
+        if cls.__name__ == 'Square':
+            anon = cls(1)
+        anon.update(**dictionary)
+        return anon
