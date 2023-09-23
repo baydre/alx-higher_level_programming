@@ -43,8 +43,6 @@ class Square(Rectangle):
         '''
         setter for the size attribute
         '''
-        if not isinstance(value, int) or value <= 0:
-            raise ValueError("width must be a positive integer")
         self.width = value
         self.height = value
 
