@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 '''
 Task 10: And now, the Square!
+Task 11: Square size
 '''
 from models.rectangle import Rectangle
 
@@ -27,3 +28,20 @@ class Square(Rectangle):
         '''
         return ("[Square] ({:d}) {:d}/{:d} -{:d}"
                 .format(self.id, self.x, self.y, self.width))
+
+    @property
+    def size(self):
+        '''
+        getter for the size attribute
+        '''
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        '''
+        setter for the size attribute
+        '''
+        if not isinstance(value, int) or value <= 0:
+            raise ValueError("width must be a positive integer")
+        self.width = value
+        self.height = value
