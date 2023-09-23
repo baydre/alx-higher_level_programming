@@ -3,7 +3,7 @@
 Task 10: And now, the Square!
 Task 11: Square size
 Task 12: Square update
-Task 14:
+Task 14: Square instance to dict. repr.
 '''
 from models.rectangle import Rectangle
 
@@ -28,7 +28,7 @@ class Square(Rectangle):
         '''
         returns str repr. of Square instance
         '''
-        return ("[Square] ({:d}) {:d}/{:d} -{:d}"
+        return ("[Square] ({:d}) {:d}/{:d} - {:d}"
                 .format(self.id, self.x, self.y, self.width))
 
     @property
