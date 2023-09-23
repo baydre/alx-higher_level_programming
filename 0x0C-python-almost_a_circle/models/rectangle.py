@@ -136,14 +136,6 @@ class Rectangle(Base):
         '''
         return self.__width * self.__height
 
-    def perimeter(self):
-        '''
-        calculates perimeter of the rectangle
-        '''
-        if self.width == 0 or self.height == 0:
-            return 0
-        return 2 * (self.width + self.height)
-
     def display(self):
         '''
         prints rectangle values
@@ -157,11 +149,14 @@ class Rectangle(Base):
 
         Returns: formatted string
         '''
-        x = "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}"
-        return x.format(self.id, self.x, self.y, self.width, self.height)
+        return ("[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}"
+                .format(self.id, self.x, self.y, self.width, self.height))
 
-    def __repr__(self):
+    def update(self, *args, **kwargs):
         '''
-        formal string representation of the rectangle
+        class Rectangle attribute updates
         '''
-        return "Rectangle({}, {})".format(self.width, self.height)
+        if args:
+            keys = ['id', 'width', 'height', 'x', 'y']
+            for key, value in zip(keys, args):
+                setattr(self, key, value)
