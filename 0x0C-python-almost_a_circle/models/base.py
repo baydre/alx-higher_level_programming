@@ -36,10 +36,7 @@ class Base:
         Returns:
             str: JSON string repr. of list_dictionaries.
         '''
-        if list_dictionaries is None or len(list_dictionaries) == 0:
-            return "[]"
-        else:
-            return json.dumps(list_dictionaries)
+        return json.dumps(list_dictionaries or [])
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -55,3 +52,9 @@ class Base:
 
         with open(filename, mode="w", encoding="utf-8") as file:
             file.write(cls.to_json_string(obj_list))
+
+    def from_json_string(json_string):
+        '''
+        returns the list of dictionaries from JSON string repr.
+        '''
+        return json.loads(json_string or '[]')
