@@ -73,3 +73,16 @@ class Base:
             anon = cls(1)
         anon.update(**dictionary)
         return anon
+
+    @classmethod
+    def load_from_file(cls):
+        '''
+        loads instances from JSON file
+        '''
+        filename = cls.__name__ + ".json"
+        try:
+            with open(filename, mode="r", encoding="utf-8") as file:
+                instances = json.load(file)
+            return [cls.create(**attrs) for attrs in instances]
+        except FileNotFoundError:
+            return []
