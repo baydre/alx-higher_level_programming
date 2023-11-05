@@ -10,9 +10,11 @@ At the end of this, the below concepts were explained and understood.
 
 A **database** is an organized collection of data, typically stored and accessed electronically from a computer system. Databases are used to store and manage various forms of data, such as customer information, product catalogs, employee records, and much more. They are a fundamental part of modern computing and are essential for various applications, including websites, mobile apps, business software, and scientific research.
 
-A **Relational Database Management System (RDBMS)** is a type of database management system that organizes data into structured tables with rows and columns. These tables are related to each other based on predefined relationships. **SQL (Structured Query Language)** is a specialized programming language used to manage and manipulate relational databases. SQL allows users to perform tasks such as querying data, updating records, inserting new data, and deleting data from a database.
+A **Relational Database Management System (RDBMS)** is a type of database management system that organizes data into structured tables with rows and columns. These tables are related to each other based on predefined relationships.
 
-Here are some key concepts related to databases and SQL:
+**SQL (Structured Query Language)** is a specialized programming language used to manage and manipulate relational databases. SQL allows users to perform tasks such as querying data, updating records, inserting new data, and deleting data from a database.
+
+Some key concepts related to databases and SQL:
 
 ### 1. **Database Structure:**
    - **Tables:** Databases consist of one or more tables, which are structured collections of data.
