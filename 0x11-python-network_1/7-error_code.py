@@ -9,9 +9,9 @@ import requests
 
 if __name__ == "__main__":
     url = sys.argv[1]
-    r = requests.get(url)
 
     try:
+        r = requests.get(url)
         r.raise_for_status()
         print(r.text)
     except HttpError:
