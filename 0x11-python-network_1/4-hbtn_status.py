@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """ script that fetches a URL """
-import sys
 import requests
 
 
