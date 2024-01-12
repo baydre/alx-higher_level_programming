@@ -1,3 +1,4 @@
+// script that adds, removes and clears LI elements from a list.
 $(document).ready(function () {
   // Add a new <li> element when the user clicks on DIV#add_item
   $("#add_item").click(function () {
