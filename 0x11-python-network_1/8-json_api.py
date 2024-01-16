@@ -19,8 +19,8 @@ if __name__ == "__main__":
     try:
         r = requests.post(url, data=payload).json()
         if r:
-            print("[{}] {}".format(r['id'], r['name']))
+            print("[{}] {}".format(r.get('id'), r.get('name')))
         else:
             print("No result")
-    except as Error:
+    except ValueError:
         print("Not a valid JSON")
