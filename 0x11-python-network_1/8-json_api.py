@@ -13,7 +13,7 @@ if __name__ == "__main__":
 
     data = {'q': q}
 
-    if len(argv) < 1:
+    if len(sys.argv) < 1:
         q = argv[1]
     try:
         r = requests.post(url, data).json()
