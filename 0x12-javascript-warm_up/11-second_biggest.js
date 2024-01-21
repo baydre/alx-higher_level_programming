@@ -1,6 +1,6 @@
 #!/usr/bin/node
 // script that searches the second biggest integer in an arg-list.
-let list = [];
+const list = [];
 if (process.argv.length < 4) {
   console.log(0);
 } else {
@@ -10,7 +10,7 @@ if (process.argv.length < 4) {
     }
   }
   // removes duplicate
-  let sorted = list.sort(function (a, b) { return a - b; }).reverse();
-  let uniq = [...new Set(sorted)];
+  const sorted = list.sort(function (a, b) { return a - b; }).reverse();
+  const uniq = [...new Set(sorted)];
   console.log(uniq[1]);
 }
